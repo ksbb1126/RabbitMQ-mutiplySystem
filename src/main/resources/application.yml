@@ -1,0 +1,28 @@
+server:
+  port: 8081
+
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: tiger
+    password: 1234
+  activemq:
+    broker-url:
+
+  # database
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/db01?serverTimezone=Asia/Seoul
+    username: root
+    password: 1234
+
+## mybatis
+#mybatis:
+#  type-aliases-package: com.example.multiply
+#  mapper-locations: mybatis/mapper/*.xml
+
