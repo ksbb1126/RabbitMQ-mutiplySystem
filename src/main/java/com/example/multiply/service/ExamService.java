@@ -6,5 +6,5 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 public interface ExamService {
     void insertExam(boolean result, ExamDTO examDTO) throws JsonProcessingException;
 
-    void giveExam(ExamDTO examDTO);
+    ExamDTO findExam(String name);
 }

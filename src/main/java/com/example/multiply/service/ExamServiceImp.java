@@ -40,7 +40,7 @@ public class ExamServiceImp implements ExamService{
     }
 
     @Override
-    public void giveExam(ExamDTO examDTO) {
-
+    public ExamDTO findExam(String name) {
+        return userMapper.findExam(name);
     }
 }

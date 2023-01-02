@@ -4,13 +4,12 @@ package com.example.multiply.controller;
 import com.example.multiply.domain.ExamDTO;
 import com.example.multiply.domain.Multiplication;
 import com.example.multiply.domain.MultiplicationResultAttempt;
+import com.example.multiply.domain.QueueDTO;
 import com.example.multiply.service.ExamService;
 import com.example.multiply.service.MultiplicationService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -44,6 +43,10 @@ class HomeController {
         examDTO.setNumB(mra.getMultiplication().getFactorB());
         // (3, 4) 문제를 리턴한다.
         examService.insertExam(multiplicationService.checkAttempt(mra), examDTO);
-        examService.giveExam(examDTO);
+    }
+
+    @GetMapping("/get/{name}")
+    public ExamDTO func04(@PathVariable String name) {
+        return examService.findExam(name);
     }
 }
